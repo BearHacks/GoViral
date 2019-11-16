@@ -1,2 +1,0 @@
-# GoViral
-goviral.ml
