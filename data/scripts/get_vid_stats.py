@@ -23,14 +23,27 @@ def get_vid_stats_id(vid_id):
     full_response = full_response + json.dumps(loaded_response) + ","
     return full_response;
     
-f = open("data/dataset/json/video_stats.json","w+")
-arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+f = open("data/dataset/json/videostats.json","w+")
+jsonfile = open("data/dataset/json/response.json","r")
+videos = json.loads(jsonfile.read())
 
 i = 0
+j = 0
+
 f.write("{\"videoStatistics\":[")
-while i < len(arr):
-    response = get_vid_stats_id("lLp8ybJER_Q")
-    f.write((response))
-    i = i + 1;  
+
+while(i < len(videos["videos"])):
+    while(j < len(videos["videos"][i]["items"])):
+        print("i: " + str(i))
+        print("j: " + str(j))
+        try:
+            id = videos["videos"][i]["items"][j]["id"]["videoId"]
+            response = get_vid_stats_id(str(id))
+            f.write(response)
+        except:
+            break;
+        j = j + 1
+    i = i + 1
+    j = 0
 f.write("]}")
-f.close();
+f.close()
