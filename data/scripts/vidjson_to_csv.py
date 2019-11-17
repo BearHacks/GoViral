@@ -3,7 +3,7 @@ import json
 fr = open("data/dataset/json/videostats.json","r")
 f = open("data/dataset/csv/videostats.csv","w+")
 
-f.write("viewCount,likeCount,dislikeCount,favoriteCount,commentCount,upTime, projectedViews\n")
+f.write("viewCount,likeCount,dislikeCount,favoriteCount,commentCount,upTime,projectedViews\n")
 
 videoStatsRaw = fr.read()
 videoStatistics = json.loads(videoStatsRaw)
