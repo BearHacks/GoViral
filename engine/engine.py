@@ -14,7 +14,7 @@ dataset = pd.read_csv('data/dataset/csv/videostats.csv', names=names)
 df = dataset.drop(dataset.index[0])
 
 
-API_KEY = "AIzaSyBkSrsmU_JvJR5GxcergrYKjyRWjA5Up3U"
+API_TOKEN = "AIzaSyBkSrsmU_JvJR5GxcergrYKjyRWjA5Up3U"
 # demo link : https://www.youtube.com/watch?v=G5JBZk-DiQU
 #print(df)
 
@@ -49,27 +49,32 @@ listuser = userinput.split('=')
 
 print(listuser[1])
 
-final = json.loads(response)
-id = final["id"]["videoId"]
-print(id)
-print("enter views: ")
-viewCount = input()
-print("enter likeCount: ")
-likeCount = input()
-print("enter dislikeCount: ")
-dislikeCount = input()
-print("enter favoriteCount: ")
-favoriteCount = input()
-print("enter commentCount: ")
-commentCount = input()
-print("enter uptime(minutes): ")
-upTime = input()
+response = requests.get("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +listuser[1]+ "&key=" + API_TOKEN)
+#load response to dictionary obj
+loaded_response = json.loads(response.content)
+
+#print content of response
+print(response.content)
+
+upTime = 1000;
+finalID = loaded_response["items"][0]["statistics"]
+viewCount = finalID["viewCount"]
+likeCount = finalID["likeCount"]
+dislikeCount = finalID["dislikeCount"]
+favoriteCount = finalID["favoriteCount"]
+commentCount = finalID["commentCount"]
+print("viewCount: " + viewCount)
+print("likeCOunt: " + likeCount)
+print("dislikeCount: " + dislikeCount)
+print("favoriteCount: " + favoriteCount)
+print("commentCount: " + commentCount)
+print("uptime: " + str(upTime))
+
 
 hi = [float(viewCount), float(likeCount), float(dislikeCount), float(favoriteCount), float(commentCount), float(upTime)]
 n = np.asarray(hi)
 
 n = n.reshape(1, -1)
-
 
 pred = regressor.predict(n)
 
