@@ -5,12 +5,17 @@ import seaborn as seabornInstance
 from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
+import requests
+import json
 
 names = [ "projectedViews", "viewCount", "likeCount","dislikeCount", "favoriteCount", "commentCount", "upTime"]
 
 dataset = pd.read_csv('data/dataset/csv/videostats.csv', names=names)
 df = dataset.drop(dataset.index[0])
 
+
+API_KEY = "AIzaSyBkSrsmU_JvJR5GxcergrYKjyRWjA5Up3U"
+# demo link : https://www.youtube.com/watch?v=G5JBZk-DiQU
 #print(df)
 
 X = df.iloc[:, 1:7].values
@@ -38,6 +43,15 @@ print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
 print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))  
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
+print("enter link to youtube video: ")
+userinput = input()
+listuser = userinput.split('=')
+
+print(listuser[1])
+
+final = json.loads(response)
+id = final["id"]["videoId"]
+print(id)
 print("enter views: ")
 viewCount = input()
 print("enter likeCount: ")
