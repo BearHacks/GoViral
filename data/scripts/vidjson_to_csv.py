@@ -3,7 +3,7 @@ import json
 import requests
 import datetime
 
-API_TOKEN = 'AIzaSyBmyGH3_apVx9_ngVE-r-M0m7vtBeTR1p8'
+API_TOKEN = 'AIzaSyAmRvlsEyAMEIgBnFQzSd5Q2L4Y-pnDEZg'
 API_URL_BASE = 'https://www.googleapis.com/youtube/v3'
 
 fr = open("data/dataset/json/videostats.json","r")
@@ -45,7 +45,7 @@ while i < len(videoStatistics["videoStatistics"]):
         timesince = datetime.datetime.today() - publishedTime
         minutessince = int(timesince.total_seconds() / 60)
         print(minutessince)
-        f.write(str(float(minutessince)) + "," + str(float(viewCount)) + "," + "0.0" + "," + str(float(likeCount)) + "," +  str(float(dislikeCount)) + "," + str(float(favoriteCount)) + "," + str(float(commentCount)) + "\n")
+        f.write(str(float(viewCount)) + "," + "0.0" + "," + str(float(likeCount)) + "," +  str(float(dislikeCount)) + "," + str(float(favoriteCount)) + "," + str(float(commentCount)) + str(float(minutessince)) + "\n")
     except:
         i = i
     i = i + 1
