@@ -3,7 +3,7 @@ import json
 fr = open("data/dataset/json/videostats.json","r")
 f = open("data/dataset/csv/videostats.csv","w+")
 
-f.write("viewCount,likeCount,dislikeCount,favoriteCount,commentCount\n")
+f.write("viewCount,likeCount,dislikeCount,favoriteCount,commentCount,upTime projectedViews\n")
 
 videoStatsRaw = fr.read()
 videoStatistics = json.loads(videoStatsRaw)
@@ -18,8 +18,9 @@ while i < len(videoStatistics["videoStatistics"]):
         dislikeCount = videoStatistics["videoStatistics"][i]["items"][0]["statistics"]["dislikeCount"]
         favoriteCount = videoStatistics["videoStatistics"][i]["items"][0]["statistics"]["viewCount"]
         commentCount = videoStatistics["videoStatistics"][i]["items"][0]["statistics"]["commentCount"]
-        f.write(viewCount + "," + likeCount + "," + dislikeCount + "," + favoriteCount + "," + commentCount + "\n")
+
+        f.write("0" + "," + likeCount + "," + dislikeCount + "," + favoriteCount + "," + commentCount + "," + "525600" + "," + viewCount + "\n")
     except:
-        trash = 10  
+        i = i
     i = i + 1
 f.close()
