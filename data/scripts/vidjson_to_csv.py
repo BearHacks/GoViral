@@ -45,7 +45,7 @@ while i < len(videoStatistics["videoStatistics"]):
         timesince = datetime.datetime.today() - publishedTime
         minutessince = int(timesince.total_seconds() / 60)
         print(minutessince)
-        f.write(str(float(viewCount)) + "," + "0.0" + "," + str(float(likeCount)) + "," +  str(float(dislikeCount)) + "," + str(float(favoriteCount)) + "," + str(float(commentCount)) + str(float(minutessince)) + "\n")
+        f.write(str(float(viewCount)) + "," + "0.0" + "," + str(float(likeCount)) + "," +  str(float(dislikeCount)) + "," + str(float(favoriteCount)) + "," + str(float(commentCount)) + "," + str(float(minutessince)) + "\n")
     except:
         i = i
     i = i + 1

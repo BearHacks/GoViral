@@ -1,6 +1,6 @@
 <?php
     
-    #request:        ?viewCount=1000&likeCount=1000&dislikeCount=109&favoriteCount=1030&commentCount=192
+    #request:  ?viewCount=1000&likeCount=1000&dislikeCount=109&favoriteCount=1030&commentCount=192         
     header('Access-Control-Allow-Origin: *');
     if(isset($_GET["viewCount"]) && isset($_GET["likeCount"]) && isset($_GET["dislikeCount"]) && isset($_GET["favoriteCount"]) && isset($_GET["commentCount"]))
     {
