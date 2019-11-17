@@ -3,7 +3,7 @@ import json
 import requests
 import datetime
 
-API_TOKEN = 'AIzaSyAmRvlsEyAMEIgBnFQzSd5Q2L4Y-pnDEZg'
+API_TOKEN = ''
 API_URL_BASE = 'https://www.googleapis.com/youtube/v3'
 
 fr = open("data/dataset/json/videostats.json","r")

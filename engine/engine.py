@@ -14,7 +14,7 @@ dataset = pd.read_csv('data/dataset/csv/videostats.csv', names=names)
 df = dataset.drop(dataset.index[0])
 
 
-API_TOKEN = "AIzaSyBkSrsmU_JvJR5GxcergrYKjyRWjA5Up3U"
+API_TOKEN = ""
 # demo link : https://www.youtube.com/watch?v=G5JBZk-DiQU
 #print(df)
 
