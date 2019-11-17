@@ -20,6 +20,6 @@ while i < len(videoStatistics["videoStatistics"]):
         commentCount = videoStatistics["videoStatistics"][i]["items"][0]["statistics"]["commentCount"]
         f.write(viewCount + "," + likeCount + "," + dislikeCount + "," + favoriteCount + "," + commentCount + "\n")
     except:
-        f.write("-1,-1,-1,-1,-1\n")        
+        trash = 10  
     i = i + 1
 f.close()
