@@ -1,6 +1,10 @@
 import csv
 import pandas as pd
 import numpy as np
+import seaborn as seabornInstance 
+from sklearn.model_selection import train_test_split 
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
 
 names = [ "projectedViews", "viewCount", "likeCount","dislikeCount", "favoriteCount", "commentCount", "upTime"]
 
@@ -47,12 +51,12 @@ commentCount = input()
 print("enter uptime(minutes): ")
 upTime = input()
 
-hi = [viewCount, likeCount, dislikeCount, favoriteCount, commentCount, upTime]
+hi = [float(viewCount), float(likeCount), float(dislikeCount), float(favoriteCount), float(commentCount), float(upTime)]
 n = np.asarray(hi)
 
 n = n.reshape(1, -1)
-print(n)
+
 
 pred = regressor.predict(n)
 
-print(pred.flatten())
+print(float(pred.flatten()))
