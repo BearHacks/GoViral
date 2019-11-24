@@ -43,36 +43,37 @@ print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
 print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))  
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
-print("enter link to youtube video: ")
-userinput = input()
-listuser = userinput.split('=')
+# print("enter link to youtube video: ")
+# userinput = input()
+# listuser = userinput.split('=')
 
-print(listuser[1])
+# print(listuser[1])
 
-response = requests.get("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +listuser[1]+ "&key=" + API_TOKEN)
+#response = requests.get("https://www.googleapis.com/youtube/v3/videos?part=statistics&id=" +listuser[1]+ "&key=" + API_TOKEN)
 #load response to dictionary obj
-loaded_response = json.loads(response.content)
+#loaded_response = json.loads(response.content)
 
 #print content of response
-print(response.content)
+#print(response.content)
 
 upTime = 1000;
-finalID = loaded_response["items"][0]["statistics"]
-viewCount = finalID["viewCount"]
-likeCount = finalID["likeCount"]
-dislikeCount = finalID["dislikeCount"]
-favoriteCount = finalID["favoriteCount"]
-commentCount = finalID["commentCount"]
-print("viewCount: " + viewCount)
-print("likeCOunt: " + likeCount)
-print("dislikeCount: " + dislikeCount)
-print("favoriteCount: " + favoriteCount)
-print("commentCount: " + commentCount)
-print("uptime: " + str(upTime))
+# finalID = loaded_response["items"][0]["statistics"]
+# viewCount = finalID["viewCount"]
+# likeCount = finalID["likeCount"]
+# dislikeCount = finalID["dislikeCount"]
+# favoriteCount = finalID["favoriteCount"]
+# commentCount = finalID["commentCount"]
+# print("viewCount: " + viewCount)
+# print("likeCOunt: " + likeCount)
+# print("dislikeCount: " + dislikeCount)
+# print("favoriteCount: " + favoriteCount)
+# print("commentCount: " + commentCount)
+# print("uptime: " + str(upTime))
 
 
-hi = [float(viewCount), float(likeCount), float(dislikeCount), float(favoriteCount), float(commentCount), float(upTime)]
-n = np.asarray(hi)
+# predictionInput = [float(viewCount), float(likeCount), float(dislikeCount), float(favoriteCount), float(commentCount), float(upTime)]
+predictionInput = [999999999999999999, 80000, 840, 950000, 4161, 10000]
+n = np.asarray(predictionInput)
 
 n = n.reshape(1, -1)
 
