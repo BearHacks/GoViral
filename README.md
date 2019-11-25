@@ -1,6 +1,6 @@
 # goviral.ml
 #### https://goviral.ml  (website, contact/product info, alpha access)
-
+#### http://goviral.ml (secondary website if primary is having issues)
 
 Goviral is an API that uses data from Youtube, including the number of views, the number of likes and dislikes, how long the video has been up for, the number of comments, and the favorite count, to make a prediction of the projected views of a video after a given amount of time.
 
