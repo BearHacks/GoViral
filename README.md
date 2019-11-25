@@ -3,3 +3,5 @@ The product we have created is GO VIRAL, which is an API that uses data from You
 
 If you would like to contribute to the project, join our discord server and contact us.
 Or send an email to us @bearhacksevhs@gmail.com
+
+discord: https://discord.gg/yDC559H
