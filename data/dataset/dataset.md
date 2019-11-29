@@ -6,4 +6,4 @@ data/dataset/json/videostats.json -> all stats for videos (final json before con
 ## Scripts
 data/scripts/get_channel_data.py -> fetch all search results into response.json
 data/scripts/get_vid_stats.py -> fetch vid stats into videostats.json
-data/scripts/vidsjson_to_csv.py -> convert videostats.json to videostats.csv
+data/scripts/vidsjson_to_csv.py -> convert videostats.json to videostats.csv 
